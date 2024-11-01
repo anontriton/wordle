@@ -6,6 +6,15 @@
     --text-color: white;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 body {
     font-family: verdana, sans-serif;
     display: flex;
@@ -79,7 +88,8 @@ body {
 
 .letter-box {
     border: 2px solid var(--border-color);
-    height: 60px;
+    height: 100%;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,6 +174,10 @@ button:disabled {
     body {
         background-image: url("rengoku_mobile.jpg");
         background-size: cover;
+    }
+
+    .game-container {
+        height: 90vh; /* more space on mobile */
     }
 }
 
