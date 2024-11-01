@@ -178,8 +178,3 @@ button:disabled {
         font-size: 0.9rem;
     }
 }
-
-.clickable {
-    touch-action: manipulation;
-    user-select: none;
-}
