@@ -11,7 +11,7 @@ const getRandomWord = async () => {
     try {
         gameState.isLoading = true;
 
-        const response = await fetch('https://api.datamuse.com/words?sp=?????&max=100');
+        const response = await fetch('https://api.datamuse.com/words?sp=?????&max=256');
         const words = await response.json();
 
         const word = words[Math.floor(Math.random() * words.length)].word;
