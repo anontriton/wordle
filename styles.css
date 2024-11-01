@@ -15,7 +15,7 @@ body {
     padding: 20px;;
     background-image: url("rengoku_full.jpg");
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: round;
 }
 
 .header {
@@ -165,7 +165,7 @@ button:disabled {
     body {
         background-image: url("rengoku_mobile.jpg");
         background-size: contain;
-        background-repeat: no-repeat;
+        background-repeat: round;
     }
 }
 
