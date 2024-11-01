@@ -193,7 +193,7 @@ const handleGuess = async () => {
     const guess = input.value.toUpperCase();
 
     if (guess.length !== 5) {
-        alert('5 letters only!');
+        alert('must be 5 letters!');
         return;
     }
 
