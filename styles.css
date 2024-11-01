@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 20px;;
     background-image: url("rengoku_full.jpg");
-    background-size: auto;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
@@ -164,7 +164,7 @@ button:disabled {
 @media (max-width: 768px) {
     body {
         background-image: url("rengoku_mobile.jpg");
-        background-size: auto;
+        background-size: contain;
         background-repeat: no-repeat;
     }
 }
