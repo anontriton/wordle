@@ -195,6 +195,8 @@ const resetGame = async () => {
     const guessButton = document.getElementById('guess-button');
     guessButton.disabled = false;
 
+    gameState.guessCount = 0;
+
     console.log('answer:', gameState.answer);
 };
 
