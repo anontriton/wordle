@@ -6,13 +6,6 @@
     --text-color: white;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
 body {
     font-family: verdana, sans-serif;
     display: flex;
