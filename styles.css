@@ -7,7 +7,6 @@
 }
 
 body {
-    font-family: "Comic Sans MS", "Comic Sans";
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +53,6 @@ body {
 }
 
 .key {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     padding: 10px;
     min-width: 30px;
     text-align: center;
@@ -122,7 +120,6 @@ input {
 }
 
 button {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     padding: 10px 20px;
     font-size: 1rem;
     background-color: #e8002d;
@@ -142,7 +139,6 @@ button:disabled {
 }
 
 .modal {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     display: none;
     position: fixed;
     top: 0;
