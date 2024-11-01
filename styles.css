@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 2vh;
+    padding: 20px;;
     background-image: url("rengoku_full.jpg");
     background-size: cover;
 }
@@ -35,19 +35,17 @@ body {
 .grid {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
-    gap: 1vh;
-    margin-bottom: 2vh;
+    gap: 5px;
+    margin-bottom: 20px;
     width: 100%;
-    flex: 3;
 }
 
 .keyboard {
     font-family: verdana, sans-serif;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    gap: 0.5vh;
+    gap: 5px;
     width: 100%;
-    flex: 2;
 }
 
 .keyboard-row {
@@ -81,8 +79,7 @@ body {
 
 .letter-box {
     border: 2px solid var(--border-color);
-    height: 100%;
-    aspect-ratio: 1;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,10 +165,6 @@ button:disabled {
         background-image: url("rengoku_mobile.jpg");
         background-size: cover;
     }
-
-    .game-container {
-        height: 90vh;
-    }
 }
 
 @media (max-width: 600px) {
@@ -179,10 +172,14 @@ button:disabled {
         height: 50px;
         font-size: 1.5rem;
     }
-
     .key {
         padding: 5px;
         min-width: 30px;
         font-size: 0.9rem;
     }
+}
+
+.clickable {
+    touch-action: manipulation;
+    user-select: none;
 }
