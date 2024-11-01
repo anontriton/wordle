@@ -9,12 +9,15 @@ const gameState = {
 const getRandomWord = async () => {
     try {
         gameState.isLoading = true;
-        const response = await fetch('https://random-word-api.herokuapp.com/word?length=5');
-        const [word] = await response.json();
+
+        const response = await fetch('https://api.datamuse.com/words?sp=?????&max=500');
+        const words = await response.json();
+        
+        const word = words[Math.floor(Math.random() * words.length)].word;
         return word.toUpperCase();
     } catch (error) {
         console.error('API error', error);
-        return 'error!';
+        return 'ERROR';
     } finally {
         gameState.isLoading = false;
     }
