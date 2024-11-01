@@ -115,7 +115,6 @@ const updateLetterState = (letter, state) => {
             key.classList.add(state);
 
             if (state === 'wrong') {
-                key.disabled = true; // disable key for letters not in answer
                 key.classList.add('disabled-key'); // styling
             }
         }
