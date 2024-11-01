@@ -1,0 +1,182 @@
+:root {
+    --correct-color: #229971;
+    --wrong-position-color: #ff8000;
+    --wrong-letter-color: #6c6f85;
+    --border-color: #6c6f85;
+    --text-color: white;
+}
+
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;;
+    background-image: url("rengoku_full.jpg");
+    background-size: cover;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.key {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    padding: 10px;
+    min-width: 30px;
+    text-align: center;
+    background-color: var(--border-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.disabled-key {
+    background-color: #d3d3d3;
+    color: #888888;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.word-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.letter-box {
+    border: 2px solid var(--border-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.correct {
+    background-color: var(--correct-color);
+    border-color: var(--correct-color);
+    color: var(--text-color);
+}
+
+.wrong-position {
+    background-color: var(--wrong-position-color);
+    border-color: var(--wrong-position-color);
+    color: var(--text-color);
+}
+
+.wrong {
+    background-color: var(--wrong-letter-color);
+    border-color: var(--wrong-letter-color);
+    color: var(--text-color);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+button {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e8002d;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3671c6;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.modal {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #B6BABD;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    body {
+        background-image: url("rengoku_mobile.jpg");
+        background-size: cover;
+    }
+}
+
+@media (max-width: 600px) {
+    .letter-box {
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .key {
+        padding: 8px;
+        min-width: 25px;
+        font-size: 0.9rem;
+    }
+}

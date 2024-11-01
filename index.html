@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS120 Project 2 - Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Iverson's Wordle</h1>
+    </div>
+
+    <div class="game-container">
+        <div class="grid" id="grid"></div>
+        <div class="input-container">
+            <input type="text" id="guess-input" maxlength="5">
+            <button id="guess-button">Guess</button>
+        </div>
+        <div class="keyboard" id="keyboard"></div>
+    </div>
+
+    <div class="modal" id="game-modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <button id="restart-button">Play Again</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
