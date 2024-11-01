@@ -193,14 +193,14 @@ const handleGuess = async () => {
     const guess = input.value.toUpperCase();
 
     if (guess.length !== 5) {
-        alert('must be 5 letters!');
+        alert('Please enter a 5-letter word or else >:(');
         return;
     }
 
     // check word validity
     const isValid = await isValidWord(guess);
     if (!isValid) {
-        alert('not a real word, buddy :/');
+        alert('Not a real word, buddy :/');
         input.value = ''; // clear input
         return;
     }
@@ -214,10 +214,10 @@ const handleGuess = async () => {
 
     if (guess === gameState.answer) {
         gameState.gameOver = true;
-        showModal('congrats, you won!');
+        showModal('Congrats, you won!');
     } else if (gameState.currentRow === 5) {
         gameState.gameOver = true;
-        showModal(`oops! the answer was ${gameState.answer}`);
+        showModal(`Game over! The answer was ${gameState.answer}`);
     }
 
     gameState.currentRow++;
