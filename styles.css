@@ -174,8 +174,13 @@ button:disabled {
     }
 
     .key {
-        padding: 8px;
-        min-width: 25px;
+        padding: 5px;
+        min-width: 30px;
         font-size: 0.9rem;
     }
+}
+
+.clickable {
+    touch-action: manipulation;
+    user-select: none;
 }
