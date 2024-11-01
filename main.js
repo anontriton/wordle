@@ -3,21 +3,24 @@ const gameState = {
     gameOver: false,
     answer: '',
     usedLetters: new Set(),
-    letterStatuses: {}
+    letterStatuses: {},
+    guessCount: 0
 };
 
 const getRandomWord = async () => {
     try {
         gameState.isLoading = true;
 
-        const response = await fetch('https://api.datamuse.com/words?sp=?????&max=500');
+        const response = await fetch('https://api.datamuse.com/words?sp=?????&max=100');
         const words = await response.json();
-        
+
         const word = words[Math.floor(Math.random() * words.length)].word;
         return word.toUpperCase();
+
     } catch (error) {
         console.error('API error', error);
         return 'ERROR';
+
     } finally {
         gameState.isLoading = false;
     }
@@ -27,6 +30,7 @@ const isValidWord = async (word) => {
     try {
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
         return response.ok;
+
     } catch (error) {
         console.error('API error:', error);
         return false;
@@ -70,6 +74,7 @@ const initializeKeyboard = () => {
             const key = document.createElement('button');
             key.className = 'key';
             key.textContent = letter;
+
             key.addEventListener('click', () => {
                 const input = document.getElementById('guess-input');
                 if (input.value.length < 5) {
@@ -162,7 +167,9 @@ const updateGrid = (guess, results) => {
 const showModal = (message) => {
     const modal = document.getElementById('game-modal');
     const modalMessage = document.getElementById('modal-message');
-    modalMessage.textContent = message;
+    
+    modalMessage.innerHTML = `${message}<br><br>score: ${gameState.guessCount}`;
+    
     modal.style.display = 'flex';
 };
 
@@ -195,8 +202,11 @@ const handleGuess = async () => {
     const input = document.getElementById('guess-input');
     const guess = input.value.toUpperCase();
 
+    gameState.guessCount++;
+
     if (guess.length !== 5) {
         alert('Please enter a 5-letter word or else >:(');
+        gameState.guessCount--;
         return;
     }
 
@@ -205,6 +215,7 @@ const handleGuess = async () => {
     if (!isValid) {
         alert('Not a real word, buddy :/');
         input.value = ''; // clear input
+        gameState.guessCount--;
         return;
     }
 
@@ -218,6 +229,7 @@ const handleGuess = async () => {
     if (guess === gameState.answer) {
         gameState.gameOver = true;
         showModal('Congrats, you won!');
+
     } else if (gameState.currentRow === 5) {
         gameState.gameOver = true;
         showModal(`Game over! The answer was ${gameState.answer}`);
