@@ -7,6 +7,7 @@
 }
 
 body {
+    font-family: verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,6 +41,7 @@ body {
 }
 
 .keyboard {
+    font-family: verdana, sans-serif;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     gap: 5px;
@@ -120,6 +122,7 @@ input {
 }
 
 button {
+    font-family: verdana, sans-serif;
     padding: 10px 20px;
     font-size: 1rem;
     background-color: #e8002d;
@@ -139,6 +142,7 @@ button:disabled {
 }
 
 .modal {
+    font-family: verdana, sans-serif;
     display: none;
     position: fixed;
     top: 0;
