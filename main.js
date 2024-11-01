@@ -168,7 +168,7 @@ const showModal = (message) => {
     const modal = document.getElementById('game-modal');
     const modalMessage = document.getElementById('modal-message');
     
-    modalMessage.innerHTML = `${message}<br><br>score: ${gameState.guessCount}`;
+    modalMessage.innerHTML = `${message}<br><br>guesses: ${gameState.guessCount}`;
     
     modal.style.display = 'flex';
 };
